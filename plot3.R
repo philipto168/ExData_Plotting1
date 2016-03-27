@@ -1,7 +1,7 @@
 library(lubridate)
 
 # read data and convert the date format.
-b<-read.delim("./household_power_consumption.txt", sep=";")
+b<-read.table("./household_power_consumption.txt",  header = TRUE,sep=";",na.string="?")
 b$Global_active_power <-as.numeric(b$Global_active_power)
 b$Date <- dmy(b$Date)
 
